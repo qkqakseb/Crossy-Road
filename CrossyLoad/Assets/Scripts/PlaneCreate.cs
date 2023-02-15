@@ -11,6 +11,7 @@ public class PlaneCreate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 특정 위치가 있어야지 확인할 수 있다.
         startPos = player.transform.position;    
     }
 
@@ -18,20 +19,21 @@ public class PlaneCreate : MonoBehaviour
     void Update()
     {
         // 플레이어의 좌표z가 10씩 움직일때 마다 Plane의 위치도 10씩 움직이게 한다.
-        // 특정 위치가 있어야지 확인할 수 있다.
-        if (startPos.z + 10 <= player.transform.position.z)
+        // 앞으로 가기
+        if (startPos.z + 5 <= player.transform.position.z)
         {
             startPos = player.transform.position;
 
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z +10);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z +5);
 
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
         }
-        else if (startPos.z - 10 >= player.transform.position.z)
+        // 뒤로 가기
+        else if (startPos.z - 5 >= player.transform.position.z)
         {
             startPos = player.transform.position;
 
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 10);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 5);
         }
     }
 }

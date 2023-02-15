@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,11 @@ using UnityEngine;
 public class LeftCubesMove : MonoBehaviour
 {
     public float startTime;
+
     public float minX, maxX;
+
     public float moveSpeed;
+
     private float direction = -1;
 
     // Start is called before the first frame update
@@ -28,4 +32,8 @@ public class LeftCubesMove : MonoBehaviour
             }
         }
     }
+
+    // 풀링으로 랜덤으로 나오게 하기
+    // plane  따라 같이 움직이기
+    // 큐브에 닿으면 멈춘다 (플레이어 죽는다.)
 }

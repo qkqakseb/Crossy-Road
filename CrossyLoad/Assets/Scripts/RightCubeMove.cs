@@ -28,4 +28,7 @@ public class RightCubeMove : MonoBehaviour
             }
         }
     }
+    // 풀링으로 랜덤으로 나오게 하기
+    // plane  따라 같이 움직이기
+    // 큐브에 닿으면 멈춘다 (플레이어 죽는다.)
 }
