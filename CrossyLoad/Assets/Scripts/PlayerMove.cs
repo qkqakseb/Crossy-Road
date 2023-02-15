@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,29 +22,29 @@ public class PlayerMove : MonoBehaviour
         Move();
     }
 
-    // ÇÃ·¹ÀÌ¾î ¿òÁ÷ÀÌ±â
+    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
     public void Move()
     {
 
-        // ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÌ±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-playSpeed * Time.deltaTime, 0, 0);// transformÀº ¿òÁ÷ÀÓ µüµüÇÔ
+            transform.Translate(-playSpeed * Time.deltaTime, 0, 0);// transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             isplayerMove = true;
         }
-        // ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÌ±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Translate(playSpeed * Time.deltaTime, 0, 0);
             isplayerMove = true;
         }
-        // À§ÂÊÀ¸·Î ¿òÁ÷ÀÌ±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, playSpeed * Time.deltaTime);
             isplayerMove = true;
         }
-        // ¾Æ·¡ÂÊÀ¸·Î ¿òÁ÷ÀÌ±â
+        // ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.Translate(0, 0, -playSpeed * Time.deltaTime);

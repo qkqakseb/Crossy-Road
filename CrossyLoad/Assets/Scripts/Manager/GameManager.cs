@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : SingletonBase<GameManager>
 {
-    public Stack<GameObject> CarPool;  // Â÷
-    public Stack<GameObject> LogPool;  // Åë³ª¹«
-    public Stack<GameObject> TrainPool;  // ±âÂ÷
+    public Stack<GameObject> CarPool;  // ï¿½ï¿½
+    public Stack<GameObject> LogPool;  // ï¿½ë³ªï¿½ï¿½
+    public Stack<GameObject> TrainPool;  // ï¿½ï¿½ï¿½ï¿½
 
     public GameObject CarPrafeb;
     public GameObject LogPrafeb;
@@ -20,7 +20,7 @@ public class GameManager : SingletonBase<GameManager>
     {
         base.Awake();
 
-        // ÃÊ±âÈ­
+        // ï¿½Ê±ï¿½È­
         CarPool = new Stack<GameObject>();
         LogPool = new Stack<GameObject>();
         TrainPool = new Stack<GameObject>();
@@ -30,16 +30,16 @@ public class GameManager : SingletonBase<GameManager>
 
 
 
-    // Â÷ Ç®¸µ
+    // ï¿½ï¿½ Ç®ï¿½ï¿½
     public void CarPoolCreate()
     {
-       
+
         Transform parent = GameObject.Find("Car").transform;
-        
+
         for (int i = 0; i < carCount; i++)
         {
-            Debug.Log($"parent : {parent} / {parent.name} / {parent.GetInstanceID()}");
-            GameObject CarObj = Instantiate(CarPrafeb,Vector3.zero,Quaternion.identity, parent);
+            // Debug.Log($"parent : {parent} / {parent.name} / {parent.GetInstanceID()}");
+            GameObject CarObj = Instantiate(CarPrafeb, Vector3.zero, Quaternion.identity, parent);
             CarObj.SetActive(false);
             CarPool.Push(CarObj);
         }
@@ -57,7 +57,7 @@ public class GameManager : SingletonBase<GameManager>
 
 
 
-    // Åë³ª¹« Ç®¸µ
+    // ï¿½ë³ªï¿½ï¿½ Ç®ï¿½ï¿½
     public void LoaPoolCreate()
     {
         for (int i = 0; i < logCount; i++)
@@ -79,7 +79,7 @@ public class GameManager : SingletonBase<GameManager>
 
 
 
-    // ±âÂ÷ Ç®¸µ
+    // ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½
     public void TrainPoolCreate()
     {
         for (int i = 0; i < TrainCount; i++)
