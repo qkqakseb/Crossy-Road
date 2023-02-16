@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class MainCameraAT : MonoBehaviour
 {
-    public GameObject Player; // Ä«¸Þ¶ó°¡ µû¶ó´Ù´Ò Å¸°Ù
+    public GameObject Player; // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½Ù´ï¿½ Å¸ï¿½ï¿½
 
-    public float offsetX = default;  // offset : Å¸ÄÏÀ¸·ÎºÎÅÍÀÇ Ä«¸Þ¶ó À§Ä¡
+    public float offsetX = default;  // offset : Å¸ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½Ä¡
     public float offsetY = default;
     public float offsetZ = default;
 
-    public float cameraSpeed = default; // Ä«¸Þ¶ó ¼Óµµ
+    public float cameraSpeed = default; // Ä«ï¿½Þ¶ï¿½ ï¿½Óµï¿½
 
-    Vector3 playerPos;  // Å¸°Ù À§Ä¡
+    Vector3 playerPos;  // Å¸ï¿½ï¿½ ï¿½ï¿½Ä¡
 
-    private bool isplayerMove = default;  // ÇÃ·¹ÀÌ¾îÀÇ ¿òÁ÷ÀÓ À¯¹«
+    private bool isplayerMove = default;  // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,11 +28,11 @@ public class MainCameraAT : MonoBehaviour
         isplayerMove = Player.GetComponent<PlayerMove>().isplayerMove;
         if (isplayerMove)
         {
-            // Ä«¸Þ¶ó°¡ À¯ÀúÀ§Ä¡º¸´Ù z°¡ -10 À§Ä¡¿¡¼­ µû¶ó ¿À°Ô ÇÑ´Ù.(Inspetor¿¡¼­ Á¶ÀýÇÔ)
-            playerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z+offsetZ);
+            // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ zï¿½ï¿½ -10 ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.(Inspetorï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+            playerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
 
-            // Ä«¸Þ¶óÀÇ ¿òÁ÷ÀÓÀ» ºÎµå·´°Ô ÇÏ´Â ÇÔ¼ö(Lerp)
-            transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * cameraSpeed*10);
+            // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµå·´ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½(Lerp)
+            transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * cameraSpeed * 10);
 
 
             //transform.position = playerPos;
@@ -40,21 +40,23 @@ public class MainCameraAT : MonoBehaviour
         }
         else if (isplayerMove == false)
         {
-            // Ä«¸Þ¶ó À§Ä¡±â zÃàÀ¸·Î +5 µÇ¸é ¸ØÃß°Ô ÇÑ´Ù
+            // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ +5 ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ß°ï¿½ ï¿½Ñ´ï¿½
             if (playerPos.z + 5 <= transform.position.z)
             {
-                //Debug.Log($"Ä«¸Þ¶ó zÀ§Ä¡ : {transform.position.z} / ÇÃ·¹ÀÌ¾î zÀ§Ä¡ : {playerPos.z}");
+                //Debug.Log($"Ä«ï¿½Þ¶ï¿½ zï¿½ï¿½Ä¡ : {transform.position.z} / ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ zï¿½ï¿½Ä¡ : {playerPos.z}");
             }
             else
             {
 
-                // Ä«¸Þ¶ó°¡ ÁÂÇ¥ zÃàÀ¸·Î °¡¼ÓÁÖ±â
+                // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½Ç¥ zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
                 Vector3 carmeraPos = new Vector3(0f, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
                 transform.position += carmeraPos;
+                // í†µë‚˜ë¬´ íƒ€ì„œ ì´ë™í• ë•Œ ì¹´ë©”ë¼ ê°™ì´ ì›€ì§ì´ê¸°
+                transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
                 //Debug.Log(transform.position);
             }
 
         }
-        
+
     }
 }

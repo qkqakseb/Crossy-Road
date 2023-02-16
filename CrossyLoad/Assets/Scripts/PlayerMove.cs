@@ -9,11 +9,13 @@ public class PlayerMove : MonoBehaviour
     public GameObject playerMove;
     public bool isplayerMove = true;
 
+    public Rigidbody PlayerRigidbody;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,32 +24,36 @@ public class PlayerMove : MonoBehaviour
         Move();
     }
 
-    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+    // ÇÃ·¹ÀÌ¾î ¿òÁ÷ÀÓ
     public void Move()
     {
-
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+        // ¿ÞÂÊÀÇ ¹æÇâÅ° ÀÔ·Â
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-playSpeed * Time.deltaTime, 0, 0);// transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            // 1Ä­¾¿ °¡°Ô ÇÏ±â 
+            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1, transform.position.z);
+            //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
             isplayerMove = true;
         }
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+        // ¿À¸¥ÂÊÀÇ ¹æÇâÅ° ÀÔ·Â
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(playSpeed * Time.deltaTime, 0, 0);
+            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1, transform.position.z);
+            //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
             isplayerMove = true;
         }
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+        // À§ÀÇ ¹æÇâÅ° ÀÔ·Â
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0, playSpeed * Time.deltaTime);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z + 1);
+            //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
             isplayerMove = true;
         }
-        // ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+        // ¾Æ·¡ÀÇ ¹æÇâÅ° ÀÔ·Â
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            transform.Translate(0, 0, -playSpeed * Time.deltaTime);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z - 1);
+            //PlayerRigidbody.AddForce(0f, 1f, -playSpeed);
             isplayerMove = true;
         }
         else

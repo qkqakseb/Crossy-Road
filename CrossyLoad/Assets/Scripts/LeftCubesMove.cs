@@ -14,26 +14,34 @@ public class LeftCubesMove : MonoBehaviour
     private float direction = -1;
 
     // Start is called before the first frame update
+    Rigidbody logRigidbody;
     void Start()
     {
-        
+        logRigidbody = transform.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // í†µë‚˜ë¬´ì— ë§ˆì°°ì„ ì£¼ê¸°ìœ„í•´ ì‚¬ìš©
+        logRigidbody.velocity = new Vector3(5f * direction, 0f, 0f);
+        if (transform.position.x <= minX || transform.position.x >= maxX)
+        {
+            logRigidbody.velocity = Vector3.zero;
+            direction *= -1;
+            logRigidbody.velocity = new Vector3(5f * direction, 0f, 0f);
+        }
+
         if (Time.time >= startTime)
         {
-            transform.position += new Vector3(moveSpeed* Time.deltaTime * direction, 0, 0);
 
-            if (transform.position.x <= minX || transform.position.x >= maxX)
-            {
-                direction *= -1;
-            }
+            //transform.position += new Vector3(moveSpeed * Time.deltaTime * direction, 0, 0);
+
+            // }
         }
-    }
 
-    // Ç®¸µÀ¸·Î ·£´ıÀ¸·Î ³ª¿À°Ô ÇÏ±â
-    // plane  µû¶ó °°ÀÌ ¿òÁ÷ÀÌ±â
-    // Å¥ºê¿¡ ´êÀ¸¸é ¸ØÃá´Ù (ÇÃ·¹ÀÌ¾î Á×´Â´Ù.)
+        // Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½
+        // plane  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
+        // Å¥ï¿½ê¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½×´Â´ï¿½.)
+    }
 }

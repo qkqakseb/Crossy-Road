@@ -14,6 +14,8 @@ public class RandomManager : MonoBehaviour
     public GameObject RoadParent = default;
     public Queue<GameObject> roadsQueue = default;
 
+
+    public bool isRoadCk;
     public int index = 0;
 
 
@@ -35,7 +37,7 @@ public class RandomManager : MonoBehaviour
             index++;
         }
 
-        for (int i = index; i <= 10; i++)
+        for (int i = index; i <= 30; i++)
         {
             RandomCreate();
         }
@@ -45,32 +47,39 @@ public class RandomManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 플레이어가 좌표 z로 +10씩 움직일 때
-        if (startPos.z + 3 <= Player.transform.position.z)
+        // 플레이어가 z좌표로 10칸 갔을때
+        if (startPos.z + 20 <= Player.transform.position.z && !isRoadCk)
         {
-            // startPos 초기화
-            startPos = new Vector3(0f, 0f, Mathf.RoundToInt(Player.transform.position.z));
-            // Debug.Log($"스타트 포스");
-            for (int i = 0; i < 10; i++)
-            {
-                RandomCreate();
-            }
-            // 큐에 넣은것 차례대로 지운다.
-            Destroy(roadsQueue.Dequeue());
+            isRoadCk = true;
         }
 
+        // 플레이어가 좌표 z로 +3씩 움직일 때
+        if (startPos.z + 1 <= Player.transform.position.z && isRoadCk)
+        {
+            // Debug.Log($"길 만들어짐");
+
+            // startPos 초기화
+            startPos = new Vector3(0f, 0f, Mathf.RoundToInt(Player.transform.position.z));
+
+            // Debug.Log($"스타트 포스");
+
+            // 길 생성
+            RandomCreate();
+            // 길 제거
+            Destroy(roadsQueue.Dequeue());
+        }
     }
 
     public void RandomCreate()
     {
-        // Debug.Log($"플레이어 좌표 움직임");
         int randNumber = Random.Range(0, 4);
         switch (randNumber)
         {
             case 0: // 나무길 만들기(위치 알기: 어디 위치에서 부터 생성되게 할지 좌표 z)
-                    // treeroad 랜덤
                 roadsQueue.Enqueue(Instantiate(treeroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
                 index++;
+                // 나무 x좌표에 랜덤 생성
+
                 break;
             case 1:   // 도로 만들기
                 roadsQueue.Enqueue(Instantiate(carroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
@@ -87,9 +96,7 @@ public class RandomManager : MonoBehaviour
             default:
                 break;
         }
-        
-
-
-        //Destroy();
     }
+
+
 }
