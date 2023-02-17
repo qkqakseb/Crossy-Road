@@ -25,7 +25,7 @@ public class GameManager : SingletonBase<GameManager>
         LogPool = new Stack<GameObject>();
         TrainPool = new Stack<GameObject>();
 
-        CarPoolCreate();
+        //CarPoolCreate();
     }
 
 
