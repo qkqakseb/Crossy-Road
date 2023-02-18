@@ -22,10 +22,12 @@ public class TrainMove : MonoBehaviour
         if (transform.position.x <= minX - 1)
         {
             transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
+            Destroy(gameObject);
         }
         if (transform.position.x >= maxX + 1)
         {
             transform.position = new Vector3(minX, transform.position.y, transform.position.z);
+            Destroy(gameObject);
         }
     }
 }

@@ -9,6 +9,8 @@ public class TrainRandom : MonoBehaviour
     public GameObject trainPrafeb;
     public GameObject instant;
 
+    public GameObject findStopObj;
+
     int directionNum;
     int posCk;
     // Start is called before the first frame update
@@ -28,11 +30,11 @@ public class TrainRandom : MonoBehaviour
         posCk = directionNum;
         if (posCk == 1)
         {
-            posCk = 20;
+            posCk = -20;
         }
         else
         {
-            posCk = -20;
+            posCk = 20;
         }
 
         StartCoroutine(createTrain());
@@ -40,12 +42,29 @@ public class TrainRandom : MonoBehaviour
 
     IEnumerator createTrain()
     {
+        while (true)
+        {
+            // 신호기 켜지는 시간 랜덤
+            yield return new WaitForSeconds(Random.Range(5, 20));
+            Debug.Log($"랜덤 시간");
+            // 신호기 활성화 시킨다.
+            findStopObj.SetActive(true);
+            Debug.Log($"활성화 : {findStopObj.activeSelf}");
 
-        yield return new WaitForSeconds(1f);
-        instant = Instantiate(trainPrafeb, new Vector3(posCk, transform.position.y, transform.position.z), Quaternion.identity, transform);
-        instant.GetComponent<TrainMove>().direction = directionNum;
+            //1초 뒤에 꺼진다 (비활성)
+            yield return new WaitForSeconds(2f);
+            findStopObj.SetActive(false);
+            Debug.Log($"비활성화 : : {findStopObj.activeSelf}");
 
-        yield return new WaitForSeconds(1f);
+            // 기차 움직인다.
+            instant = Instantiate(trainPrafeb, new Vector3(posCk, transform.position.y, transform.position.z), Quaternion.identity, transform);
+            instant.GetComponent<TrainMove>().direction = directionNum;
+            Debug.Log($"움직이는 기차");
+        }
+
+
+
+        // yield return new WaitForSeconds(1f);
 
         // }
 
