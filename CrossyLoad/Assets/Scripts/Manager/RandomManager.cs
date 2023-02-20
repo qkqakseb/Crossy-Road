@@ -19,20 +19,20 @@ public class RandomManager : MonoBehaviour
     public int index = 0;
 
 
-    //·£´ýÀ¸·Î ±æ 4°³¸¦ ¸¸µç´Ù.
-    // switch ¹®À¸·Î ¸¸µç´Ù. 
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
+    // switch ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½. 
     // Start is called before the first frame update
     void Start()
     {
         roadsQueue = new Queue<GameObject>();
         startPos = Player.transform.position;
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("Ghost");
         RoadParent = GameObject.Find("Roads");
 
-        // treeraod¸¦ 0~2±îÁö ·£´ý »ý¼º
+        // treeraodï¿½ï¿½ 0~2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < Random.Range(2, 4); i++)
         {
-            // treeroad°¡ ¸¸µé¾î Áø´Ù
+            // treeroadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             roadsQueue.Enqueue(Instantiate(treeroad, new Vector3(0f, 0.1f, i + 1), Quaternion.identity, RoadParent.transform));
             index++;
         }
@@ -47,25 +47,25 @@ public class RandomManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ÇÃ·¹ÀÌ¾î°¡ zÁÂÇ¥·Î 10Ä­ °¬À»¶§
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ zï¿½ï¿½Ç¥ï¿½ï¿½ 10Ä­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (startPos.z + 20 <= Player.transform.position.z && !isRoadCk)
         {
             isRoadCk = true;
         }
 
-        // ÇÃ·¹ÀÌ¾î°¡ ÁÂÇ¥ z·Î +3¾¿ ¿òÁ÷ÀÏ ¶§
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½Ç¥ zï¿½ï¿½ +3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         if (startPos.z + 1 <= Player.transform.position.z && isRoadCk)
         {
-            // Debug.Log($"±æ ¸¸µé¾îÁü");
+            // Debug.Log($"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
-            // startPos ÃÊ±âÈ­
+            // startPos ï¿½Ê±ï¿½È­
             startPos = new Vector3(0f, 0f, Mathf.RoundToInt(Player.transform.position.z));
 
-            // Debug.Log($"½ºÅ¸Æ® Æ÷½º");
+            // Debug.Log($"ï¿½ï¿½Å¸Æ® ï¿½ï¿½ï¿½ï¿½");
 
-            // ±æ »ý¼º
+            // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             RandomCreate();
-            // ±æ Á¦°Å
+            // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(roadsQueue.Dequeue());
         }
     }
@@ -75,21 +75,21 @@ public class RandomManager : MonoBehaviour
         int randNumber = Random.Range(0, 4);
         switch (randNumber)
         {
-            case 0: // ³ª¹«±æ ¸¸µé±â(À§Ä¡ ¾Ë±â: ¾îµð À§Ä¡¿¡¼­ ºÎÅÍ »ý¼ºµÇ°Ô ÇÒÁö ÁÂÇ¥ z)
+            case 0: // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ä¡ ï¿½Ë±ï¿½: ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ z)
                 roadsQueue.Enqueue(Instantiate(treeroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
                 index++;
-                // ³ª¹« xÁÂÇ¥¿¡ ·£´ý »ý¼º
+                // ï¿½ï¿½ï¿½ï¿½ xï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
                 break;
-            case 1:   // µµ·Î ¸¸µé±â
+            case 1:   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
                 roadsQueue.Enqueue(Instantiate(carroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
                 index++;
                 break;
-            case 2:  // °­ ¸¸µé±â
+            case 2:  // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
                 roadsQueue.Enqueue(Instantiate(riverroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
                 index++;
                 break;
-            case 3:  // ±âÂ÷±æ ¸¸µé±â
+            case 3:  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
                 roadsQueue.Enqueue(Instantiate(trainroad, new Vector3(0f, 0.1f, index + 1), Quaternion.identity, RoadParent.transform));
                 index++;
                 break;
