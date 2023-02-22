@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCameraAT : MonoBehaviour
 {
-    public GameObject Player; // ī�޶� ����ٴ� Ÿ��
+    public GameObject Player; // ī�޶� ����ٴ�? Ÿ��
 
     public float offsetX = default;  // offset : Ÿ�����κ����� ī�޶� ��ġ
     public float offsetY = default;
@@ -49,9 +49,9 @@ public class MainCameraAT : MonoBehaviour
             {
 
                 // ī�޶� ��ǥ z������ �����ֱ�
-                Vector3 carmeraPos = new Vector3(0f, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
+                Vector3 carmeraPos = new Vector3(playerPos.x, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
                 transform.position += carmeraPos;
-                // 통나무 타서 이동할때 카메라 같이 움직이기
+                // ?��?���? ????�� ?��?��?��?�� 카메?�� 같이 ???직이�?
                 transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
                 //Debug.Log(transform.position);
             }

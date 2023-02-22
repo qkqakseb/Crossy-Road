@@ -24,32 +24,32 @@ public class PlayerMove : MonoBehaviour
         Move();
     }
 
-    // ÇÃ·¹ÀÌ¾î ¿òÁ÷ÀÓ
+    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void Move()
     {
-        // ¿ÞÂÊÀÇ ¹æÇâÅ° ÀÔ·Â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·ï¿½
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            // 1Ä­¾¿ °¡°Ô ÇÏ±â 
+            // 1Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ 
             PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1, transform.position.z);
             //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
             isplayerMove = true;
         }
-        // ¿À¸¥ÂÊÀÇ ¹æÇâÅ° ÀÔ·Â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·ï¿½
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1, transform.position.z);
             //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
             isplayerMove = true;
         }
-        // À§ÀÇ ¹æÇâÅ° ÀÔ·Â
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·ï¿½
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z + 1);
             //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
             isplayerMove = true;
         }
-        // ¾Æ·¡ÀÇ ¹æÇâÅ° ÀÔ·Â
+        // ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·ï¿½
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z - 1);

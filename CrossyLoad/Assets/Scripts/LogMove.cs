@@ -20,7 +20,7 @@ public class LogMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // í†µë‚˜ë¬´ì— ë§ˆì°°ì„ ì£¼ê¸°ìœ„í•´ ì‚¬ìš©
+        // Åë³ª¹«¿¡ ¸¶ÂûÀ» ÁÖ±âÀ§ÇØ »ç¿ë
         logRigidbody.velocity = new Vector3(moveSpeed * direction, 0f, 0f);
         if (transform.position.x <= minX - 1)
         {

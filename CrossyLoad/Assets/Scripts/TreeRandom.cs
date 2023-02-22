@@ -19,7 +19,7 @@ public class TreeRandom : MonoBehaviour
         // 나무길의 랜덤한 x좌표에 나무 만들기
         for (int i = 0; i < treeCount; i++)
         {
-            int randNumber = Random.Range(-20, 20);
+            int randNumber = Random.Range(-50, 13);
             if (treesRandom.Add(randNumber))
             {
                 // Debug.Log(transform.position);

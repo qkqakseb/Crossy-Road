@@ -16,9 +16,9 @@ public class TrainRandom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ê¸°ì°¨ëŠ” ê¸¸ì— 1ê°œë§Œ í•„ìš”
-        // ê¸°ì°¨ ë°©í–¥ ëœë¤ ì›€ì§ì„
-        // ì‹ í˜¸ê¸°ê°€ ëœë¤ ì‹œê°„ìœ¼ë¡œ ë¶ˆì´ ì¼œì§€ê³  1ì´ˆ ë’¤ êº¼ì§€ë©´ ê¸°ì°¨ ì§€ë‚˜ê°„ë‹¤.
+        // ±âÂ÷´Â ±æ¿¡ 1°³¸¸ ÇÊ¿ä
+        // ±âÂ÷ ¹æÇâ ·£´ı ¿òÁ÷ÀÓ
+        // ½ÅÈ£±â°¡ ·£´ı ½Ã°£À¸·Î ºÒÀÌ ÄÑÁö°í 1ÃÊ µÚ ²¨Áö¸é ±âÂ÷ Áö³ª°£´Ù.
 
         directionNum = Random.Range(0, 2);
 
@@ -44,22 +44,22 @@ public class TrainRandom : MonoBehaviour
     {
         while (true)
         {
-            // ì‹ í˜¸ê¸° ì¼œì§€ëŠ” ì‹œê°„ ëœë¤
+            // ½ÅÈ£±â ÄÑÁö´Â ½Ã°£ ·£´ı
             yield return new WaitForSeconds(Random.Range(5, 20));
-            Debug.Log($"ëœë¤ ì‹œê°„");
-            // ì‹ í˜¸ê¸° í™œì„±í™” ì‹œí‚¨ë‹¤.
+            Debug.Log($"·£´ı ½Ã°£");
+            // ½ÅÈ£±â È°¼ºÈ­ ½ÃÅ²´Ù.
             findStopObj.SetActive(true);
-            Debug.Log($"í™œì„±í™” : {findStopObj.activeSelf}");
+            Debug.Log($"È°¼ºÈ­ : {findStopObj.activeSelf}");
 
-            //1ì´ˆ ë’¤ì— êº¼ì§„ë‹¤ (ë¹„í™œì„±)
+            //1ÃÊ µÚ¿¡ ²¨Áø´Ù (ºñÈ°¼º)
             yield return new WaitForSeconds(2f);
             findStopObj.SetActive(false);
-            Debug.Log($"ë¹„í™œì„±í™” : : {findStopObj.activeSelf}");
+            Debug.Log($"ºñÈ°¼ºÈ­ : : {findStopObj.activeSelf}");
 
-            // ê¸°ì°¨ ì›€ì§ì¸ë‹¤.
+            // ±âÂ÷ ¿òÁ÷ÀÎ´Ù.
             instant = Instantiate(trainPrafeb, new Vector3(posCk, transform.position.y, transform.position.z), Quaternion.identity, transform);
             instant.GetComponent<TrainMove>().direction = directionNum;
-            Debug.Log($"ì›€ì§ì´ëŠ” ê¸°ì°¨");
+            Debug.Log($"¿òÁ÷ÀÌ´Â ±âÂ÷");
         }
 
 

@@ -39,7 +39,7 @@ public class CarRandom : MonoBehaviour
     {
         for (int i = 0; i < carCount; i++)
         {
-            instant = Instantiate(carPrafeb, new Vector3(posCk, transform.position.y, transform.position.z), Quaternion.identity, transform);
+            instant = Instantiate(carPrafeb, new Vector3(posCk, 0.5f, transform.position.z), Quaternion.identity, transform);
             instant.GetComponent<CarMove>().direction = directionNum;
             // Debug.Log(posCk);
             // Debug.Log($"transform POsition : {transform.position}");

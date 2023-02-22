@@ -26,7 +26,7 @@ public class RandomManager : MonoBehaviour
     {
         roadsQueue = new Queue<GameObject>();
         startPos = Player.transform.position;
-        Player = GameObject.Find("Ghost");
+        Player = GameObject.Find("Player");
         RoadParent = GameObject.Find("Roads");
 
         // treeraod�� 0~2���� ���� ����

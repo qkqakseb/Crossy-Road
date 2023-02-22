@@ -40,15 +40,15 @@ public class LogRandom : MonoBehaviour
     {
         for (int i = 0; i < logCount; i++)
         {
-            instant = Instantiate(logPrafeb, new Vector3(posCk, transform.position.y, transform.position.z), Quaternion.identity, transform);
+            instant = Instantiate(logPrafeb, new Vector3(posCk, 0f, transform.position.z), Quaternion.identity, transform);
             instant.GetComponent<LogMove>().direction = directionNum;
             // Debug.Log(posCk);
             // Debug.Log($"transform POsition : {transform.position}");
 
 
-            instant.transform.localScale = new Vector3(Random.Range(0.2f, 0.35f), 1f, 3f);
+            instant.transform.localScale = new Vector3(Random.Range(1.0f, 2.0f), 1f, 1f);
 
-            yield return new WaitForSeconds(Random.Range(1, 5));
+            yield return new WaitForSeconds(Random.Range(5, 10));
 
         }
     }
