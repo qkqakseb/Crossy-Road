@@ -91,3 +91,27 @@ voxel 나룻배, 기본 길에 나무 세우기, 도로 만들기
 2023.02.22
 v1.0.6
 도로, 강, 기찻길, 코드 수정 , 크기 조정
+
+
+v1.0.7
+issue : 
+
+  1. 카메라가 일정 위치에서 정지하지 않았다.  
+      -> MainCameraAt의 Script에서 위치를 바꿔 준다??
+  2. 자동차의 가는 방향을 바꾸어 준다.
+      -> Rotation을 이용하여 방향을 바꾸어 준다??
+  3. 나무의 모양 3개를 랜덤으로 나오게 한다.
+      -> 모양 3개를 프리팹으로 넣어서 조건을 준다??
+  4. 자동차 모양 3개를 랜덤으로 나오게 한다.
+      -> 나무의 모양을 한 것처럼 한다???
+
+
+problem solving : 
+
+  1. CameraParent(부모 오브젝트)의 Pos가 (0,0,0)가 되지 않았기 때문에 부모 오브젝트의 Pos를 (0,0,0)으로 맞추어 주고 해결
+  2. CarMove의 Script에서 Start 함수에 방향이 -1로 가면 rotation(0, -180, 0)을 주어서 해결 
+       if(diraction == -1) { transfrom.rotation = Quaternion.Euler(0, -180, 0);}
+  3. 나무 모양 3개를 프리팹(public GameObject oneTree;)으로 넣고 treeShpeRandom 함수를 만들고 랜덤을 넣을 변수(treeShpe)를 선언하고 
+     swich 문을 써서 이미 선언한 treePrafeb에 대입( case 0:  treePrafeb = oneTree;)하여 해결  
+  4. 나무 모양 3개를 랜덤으로 한 것처럼 만들었다. 대신 자동차 모양 3개에 CarMove의 Script를 넣어서 움직이게 하여 해결
+                   

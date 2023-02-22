@@ -37,7 +37,7 @@ public class RandomManager : MonoBehaviour
             index++;
         }
 
-        for (int i = index; i <= 30; i++)
+        for (int i = index; i <= 100; i++)
         {
             RandomCreate();
         }

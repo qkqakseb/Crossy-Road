@@ -7,6 +7,11 @@ public class CarRandom : MonoBehaviour
     public int carCount;
 
     public GameObject carPrafeb;
+
+    public GameObject Car1;
+    public GameObject Car2;
+    public GameObject Car3;
+
     public GameObject instant;
 
     int directionNum;
@@ -14,7 +19,7 @@ public class CarRandom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        carCount = Random.Range(1, 10);
+        carCount = Random.Range(1, 5);
         directionNum = Random.Range(0, 2);
 
         if (directionNum == 0)
@@ -39,10 +44,9 @@ public class CarRandom : MonoBehaviour
     {
         for (int i = 0; i < carCount; i++)
         {
-            instant = Instantiate(carPrafeb, new Vector3(posCk, 0.5f, transform.position.z), Quaternion.identity, transform);
+            carShapeRandom();
+            instant = Instantiate(carPrafeb, new Vector3(posCk, 0.6f, transform.position.z), Quaternion.identity, transform);
             instant.GetComponent<CarMove>().direction = directionNum;
-            // Debug.Log(posCk);
-            // Debug.Log($"transform POsition : {transform.position}");
 
             yield return new WaitForSeconds(Random.Range(1, 5));
 
@@ -50,9 +54,20 @@ public class CarRandom : MonoBehaviour
 
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-
-    // }
+    public void carShapeRandom()
+    {
+        int carShape = Random.Range(0, 3);
+        switch (carShape)
+        {
+            case 0:
+                carPrafeb = Car1;
+                break;
+            case 1:
+                carPrafeb = Car2;
+                break;
+            case 2:
+                carPrafeb = Car3;
+                break;
+        }
+    }
 }

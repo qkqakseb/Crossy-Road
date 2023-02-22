@@ -15,7 +15,7 @@ public class LogRandom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        logCount = Random.Range(1, 10);
+        logCount = Random.Range(1, 5);
         directionNum = Random.Range(0, 2);
 
         if (directionNum == 0)
@@ -42,13 +42,10 @@ public class LogRandom : MonoBehaviour
         {
             instant = Instantiate(logPrafeb, new Vector3(posCk, 0f, transform.position.z), Quaternion.identity, transform);
             instant.GetComponent<LogMove>().direction = directionNum;
-            // Debug.Log(posCk);
-            // Debug.Log($"transform POsition : {transform.position}");
-
 
             instant.transform.localScale = new Vector3(Random.Range(1.0f, 2.0f), 1f, 1f);
 
-            yield return new WaitForSeconds(Random.Range(5, 10));
+            yield return new WaitForSeconds(Random.Range(2, 4));
 
         }
     }

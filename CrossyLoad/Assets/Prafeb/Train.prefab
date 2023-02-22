@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -20
   maxX: 20
-  moveSpeed: 20
+  moveSpeed: 50
   direction: -1
 --- !u!1 &2811563704849590899
 GameObject:

@@ -3,7 +3,13 @@ guid: a976a2bba72ea7240b0bf5fc7cf3add5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - treeroad: {instanceID: 0}
+  - carroad: {instanceID: 0}
+  - riverroad: {fileID: 3507818737340041747, guid: b55ab63e5409d564d9c63aed16e6c933, type: 3}
+  - trainroad: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - RoadParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -130,4 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeCount: 10
   treePrafeb: {fileID: 3000450056458479158, guid: 77573db3e88e34449a153619ab635d42, type: 3}
+  oneTree: {fileID: 3075137706447747480, guid: a0f87ee0c34d7d24bb444abe269bbad1, type: 3}
+  twoTree: {fileID: 7198221609168205377, guid: a3068681bd0bfac4ea178a237c9a77f4, type: 3}
+  threeTree: {fileID: 8368358146638783397, guid: dce4a4d4fae66d644b4ccf03640040aa, type: 3}
   instant: {fileID: 0}

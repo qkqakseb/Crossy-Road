@@ -9,22 +9,29 @@ public class TreeRandom : MonoBehaviour
 
     public GameObject treePrafeb;
 
-    // Instaiat ë‹´ê¸° ìœ„í•´
+
+    public GameObject oneTree;
+    public GameObject twoTree;
+    public GameObject threeTree;
+
+    // Instaiat ´ã±â À§ÇØ
     public GameObject instant;
 
     // Start is called before the first frame update
     void Start()
     {
+        // ³ª¹«ÀÇ ¼ö¸¦ 1~10°³ ·£´ıÀ¸·Î ¸¸µé±â
         treeCount = Random.Range(1, 10);
-        // ë‚˜ë¬´ê¸¸ì˜ ëœë¤í•œ xì¢Œí‘œì— ë‚˜ë¬´ ë§Œë“¤ê¸°
+
+        // ³ª¹«±æÀÇ ·£´ıÇÑ xÁÂÇ¥¿¡ ³ª¹« ¸¸µé±â
         for (int i = 0; i < treeCount; i++)
         {
             int randNumber = Random.Range(-50, 13);
             if (treesRandom.Add(randNumber))
             {
-                // Debug.Log(transform.position);
-                instant = Instantiate(treePrafeb, new Vector3(randNumber, transform.position.y, transform.position.z), Quaternion.identity, transform);
-                // Debug.Log($"ë‚˜ë¬´ ìœ„ì¹˜ : {instant.transform.position}");
+                treeShpeRandom();
+                instant = Instantiate(treePrafeb, new Vector3(randNumber, 0.6f, transform.position.z), Quaternion.identity, transform);
+                // Debug.Log($"³ª¹« ¸ğ¾ç : {treePrafeb}");
             }
             else
             {
@@ -33,9 +40,21 @@ public class TreeRandom : MonoBehaviour
         }
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-
-    // }
+    public void treeShpeRandom()
+    {
+        // 3°³ÀÇ ³ª¹«¸¦ ·£´ıÀ¸·Î ³ª¿À°Ô ÇÏ±â
+        int treeShape = Random.Range(0, 3);
+        switch (treeShape)
+        {
+            case 0:
+                treePrafeb = oneTree;
+                break;
+            case 1:
+                treePrafeb = twoTree;
+                break;
+            case 2:
+                treePrafeb = threeTree;
+                break;
+        }
+    }
 }
