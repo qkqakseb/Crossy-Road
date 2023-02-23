@@ -121,4 +121,9 @@ problem solving :
   v1.0.8
 
   카메라 Pos 위치 잡기, title 다시 만들기(Main Scene안에), 캐릭터 고르는 버튼 만들기(고른 캐릭터 나타나게 하기위해 캐릭터 각각 png로 정리하여 배경제거를 하여 저장) 
+
+
+  v1.0.9
+
+  UI 꾸미기 작업(화면 Object 배치, 캐릭터 Object 배치)
                    
