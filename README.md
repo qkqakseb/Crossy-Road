@@ -114,4 +114,11 @@ problem solving :
   3. 나무 모양 3개를 프리팹(public GameObject oneTree;)으로 넣고 treeShpeRandom 함수를 만들고 랜덤을 넣을 변수(treeShpe)를 선언하고 
      swich 문을 써서 이미 선언한 treePrafeb에 대입( case 0:  treePrafeb = oneTree;)하여 해결  
   4. 나무 모양 3개를 랜덤으로 한 것처럼 만들었다. 대신 자동차 모양 3개에 CarMove의 Script를 넣어서 움직이게 하여 해결
+
+
+
+  2023.02.23
+  v1.0.8
+
+  카메라 Pos 위치 잡기, title 다시 만들기(Main Scene안에), 캐릭터 고르는 버튼 만들기(고른 캐릭터 나타나게 하기위해 캐릭터 각각 png로 정리하여 배경제거를 하여 저장) 
                    

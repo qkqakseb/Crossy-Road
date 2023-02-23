@@ -6,10 +6,6 @@ public class MainCameraAT : MonoBehaviour
 {
     public GameObject Player; // ī�޶� ����ٴ�? Ÿ��
 
-    public float offsetX = default;  // offset : Ÿ�����κ����� ī�޶� ��ġ
-    public float offsetY = default;
-    public float offsetZ = default;
-
     public float cameraSpeed = default; // ī�޶� �ӵ�
 
     Vector3 playerPos;  // Ÿ�� ��ġ
@@ -29,7 +25,7 @@ public class MainCameraAT : MonoBehaviour
         if (isplayerMove)
         {
             // ī�޶� ������ġ���� z�� -10 ��ġ���� ���� ���� �Ѵ�.(Inspetor���� ������)
-            playerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
+            playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
             // ī�޶��� �������� �ε巴�� �ϴ� �Լ�(Lerp)
             transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * cameraSpeed * 10);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3507818736863942849}
   - component: {fileID: 3507818736863942848}
   - component: {fileID: 1021588113014637270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MinWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3507818737128907052}
   - component: {fileID: 3507818737128907051}
   - component: {fileID: 2741839519227457458}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MaxWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
