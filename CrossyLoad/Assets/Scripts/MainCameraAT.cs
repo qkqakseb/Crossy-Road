@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MainCameraAT : MonoBehaviour
 {
-    public GameObject Player; // ī�޶� ����ٴ�? Ÿ��
+    public GameObject Player; // ???? ??????? ???
 
-    public float cameraSpeed = default; // ī�޶� �ӵ�
+    public float cameraSpeed = default; // ???? ???
 
-    Vector3 playerPos;  // Ÿ�� ��ġ
+    Vector3 playerPos;  // ??? ???
 
-    private bool isplayerMove = default;  // �÷��̾��� ������ ����
+    private bool isplayerMove = default;  // ?��?????? ?????? ????
 
     // Start is called before the first frame update
     void Start()
@@ -24,35 +25,33 @@ public class MainCameraAT : MonoBehaviour
         isplayerMove = Player.GetComponent<PlayerMove>().isplayerMove;
         if (isplayerMove)
         {
-            // ī�޶� ������ġ���� z�� -10 ��ġ���� ���� ���� �Ѵ�.(Inspetor���� ������)
+            // ???? ??????????? z?? -10 ??????? ???? ???? ???.(Inspetor???? ??????)
             playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
-            // ī�޶��� �������� �ε巴�� �ϴ� �Լ�(Lerp)
+            // ?????? ???????? ?����?? ??? ???(Lerp)
             transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * cameraSpeed * 10);
-
-
-            //transform.position = playerPos;
-            //Debug.Log($"player Pos : {playerPos} / CameraPos : {transform.position}");
         }
         else if (isplayerMove == false)
         {
-            // ī�޶� ��ġ�� z������ +5 �Ǹ� ���߰� �Ѵ�
+            // ???? ????? z?????? +5 ??? ????? ???
             if (playerPos.z + 5 <= transform.position.z)
             {
-                //Debug.Log($"ī�޶� z��ġ : {transform.position.z} / �÷��̾� z��ġ : {playerPos.z}");
+                //Debug.Log($"???? z??? : {transform.position.z} / ?��???? z??? : {playerPos.z}");
             }
             else
             {
 
-                // ī�޶� ��ǥ z������ �����ֱ�
+                // ???? ??? z?????? ???????
                 Vector3 carmeraPos = new Vector3(playerPos.x, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
                 transform.position += carmeraPos;
-                // ?��?���? ????�� ?��?��?��?�� 카메?�� 같이 ???직이�?
+                // ???????? ?????? ???????????? ī��??? ���� ???����??
                 transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
-                //Debug.Log(transform.position);
             }
 
         }
 
     }
+
+
+
 }

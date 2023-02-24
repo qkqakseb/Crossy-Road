@@ -126,4 +126,18 @@ problem solving :
   v1.0.9
 
   UI 꾸미기 작업(화면 Object 배치, 캐릭터 Object 배치)
-                   
+
+
+  2023.02.24
+  v1.1.0
+
+ Inspector Script Obj정리
+ [Space(5)]
+ [Header("StartObj")]
+
+ 팝업창 구현 (타이틀, 시작 전, 캐릭터)
+ Exit 버튼 누르면 나가게 하기
+ 캐릭터 버튼 누르면 캐릭터 팝업창 뜨게하기
+ 뒤로가기 버튼 누르면 시작 전 팝업창 뜨게하기
+      
+
