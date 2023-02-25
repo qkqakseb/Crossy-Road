@@ -16,9 +16,25 @@ public class PopupWindow : MonoBehaviour
     public GameObject BestTxt;
 
     [Space(5)]
-    [Header("CharacterObj")]
+    [Header("CharacterUi")]
     public GameObject Logo;
     public GameObject BackButton;
+    public GameObject ReaperUi;
+    public GameObject GhostUi;
+    public GameObject Ghost_1Ui;
+    public GameObject GirlGhostUi;
+    public GameObject SkeletonUi;
+
+    [Space(5)]
+    [Header("CharacterImage")]
+    public GameObject ReaperImage;
+    public GameObject GhostImage;
+    public GameObject Ghost_1Image;
+    public GameObject GirlGhostImage;
+    public GameObject SkeletonImage;
+
+    [Space(5)]
+    [Header("Character")]
     public GameObject Reaper;
     public GameObject Ghost;
     public GameObject Ghost_1;
@@ -72,11 +88,11 @@ public class PopupWindow : MonoBehaviour
         // characterObj 활성화
         Background.SetActive(true);
         BackButton.SetActive(true);
-        Reaper.SetActive(true);
-        Ghost.SetActive(true);
-        Ghost_1.SetActive(true);
-        GirlGhost.SetActive(true);
-        Skeleton.SetActive(true);
+        ReaperUi.SetActive(true);
+        GhostUi.SetActive(true);
+        Ghost_1Ui.SetActive(true);
+        GirlGhostUi.SetActive(true);
+        SkeletonUi.SetActive(true);
     }
 
 
@@ -85,11 +101,102 @@ public class PopupWindow : MonoBehaviour
         // characterObj 비활성
         Background.SetActive(false);
         BackButton.SetActive(false);
-        Reaper.SetActive(false);
-        Ghost.SetActive(false);
-        Ghost_1.SetActive(false);
-        GirlGhost.SetActive(false);
-        Skeleton.SetActive(false);
+        ReaperUi.SetActive(false);
+        GhostUi.SetActive(false);
+        Ghost_1Ui.SetActive(false);
+        GirlGhostUi.SetActive(false);
+        SkeletonUi.SetActive(false);
+
+
+        // StartObj 활성화
+        Logo.SetActive(true);
+        ExitButton.SetActive(true);
+        CharacterButton.SetActive(true);
+        ScoreCoin.SetActive(true);
+        MoveNumber.SetActive(true);
+        BestTxt.SetActive(true);
+    }
+
+    public void SelectCharacter(string SelectName)
+    {
+        switch (SelectName)
+        {
+            case "ReaperUi":
+                ReaperImage.SetActive(true);
+                Reaper.SetActive(true);
+                GhostImage.SetActive(false);
+                Ghost.SetActive(false);
+                Ghost_1Image.SetActive(false);
+                Ghost_1.SetActive(false);
+                GirlGhostImage.SetActive(false);
+                GirlGhost.SetActive(false);
+                SkeletonImage.SetActive(false);
+                Skeleton.SetActive(false);
+                break;
+
+            case "GhostUi":
+                GhostImage.SetActive(true);
+                Ghost.SetActive(true);
+                ReaperImage.SetActive(false);
+                Reaper.SetActive(false);
+                Ghost_1Image.SetActive(false);
+                Ghost_1.SetActive(false);
+                GirlGhostImage.SetActive(false);
+                GirlGhost.SetActive(false);
+                SkeletonImage.SetActive(false);
+                Skeleton.SetActive(false);
+                break;
+
+            case "Ghost_1Ui":
+                Ghost_1Image.SetActive(true);
+                Ghost_1.SetActive(true);
+                ReaperImage.SetActive(false);
+                Reaper.SetActive(false);
+                GhostImage.SetActive(false);
+                Ghost.SetActive(false);
+                GirlGhostImage.SetActive(false);
+                GirlGhost.SetActive(false);
+                SkeletonImage.SetActive(false);
+                Skeleton.SetActive(false);
+                break;
+
+            case "GirlGhostUi":
+                GirlGhostImage.SetActive(true);
+                GirlGhost.SetActive(true);
+                ReaperImage.SetActive(false);
+                Reaper.SetActive(false);
+                GhostImage.SetActive(false);
+                Ghost.SetActive(false);
+                Ghost_1Image.SetActive(false);
+                Ghost_1.SetActive(false);
+                SkeletonImage.SetActive(false);
+                Skeleton.SetActive(false);
+                break;
+
+            case "SkeletonUi":
+                SkeletonImage.SetActive(true);
+                Skeleton.SetActive(true);
+                ReaperImage.SetActive(false);
+                Reaper.SetActive(false);
+                GhostImage.SetActive(false);
+                Ghost.SetActive(false);
+                Ghost_1Image.SetActive(false);
+                Ghost_1.SetActive(false);
+                GirlGhostImage.SetActive(false);
+                GirlGhost.SetActive(false);
+                break;
+        }
+
+        Debug.Log($"{SelectName}");
+
+        // characterObj 비활성
+        Background.SetActive(false);
+        BackButton.SetActive(false);
+        ReaperUi.SetActive(false);
+        GhostUi.SetActive(false);
+        Ghost_1Ui.SetActive(false);
+        GirlGhostUi.SetActive(false);
+        SkeletonUi.SetActive(false);
 
 
         // StartObj 활성화

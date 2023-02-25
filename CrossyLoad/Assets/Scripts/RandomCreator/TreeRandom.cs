@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TreeRandom : MonoBehaviour
 {
-    HashSet<int> treesRandom = new HashSet<int>();
-    public int treeCount;
+    public HashSet<int> treesRandom = new HashSet<int>();
+    private int treeCount;
 
     public GameObject treePrafeb;
 
@@ -14,24 +14,24 @@ public class TreeRandom : MonoBehaviour
     public GameObject twoTree;
     public GameObject threeTree;
 
-    // Instaiat ´ã±â À§ÇØ
-    public GameObject instant;
+    // Instaiat ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private GameObject instant;
 
     // Start is called before the first frame update
     void Start()
     {
-        // ³ª¹«ÀÇ ¼ö¸¦ 1~10°³ ·£´ýÀ¸·Î ¸¸µé±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1~10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         treeCount = Random.Range(1, 10);
 
-        // ³ª¹«±æÀÇ ·£´ýÇÑ xÁÂÇ¥¿¡ ³ª¹« ¸¸µé±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ xï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < treeCount; i++)
         {
-            int randNumber = Random.Range(-50, 13);
+            int randNumber = Random.Range(-40, 40);
             if (treesRandom.Add(randNumber))
             {
                 treeShpeRandom();
                 instant = Instantiate(treePrafeb, new Vector3(randNumber, 0.6f, transform.position.z), Quaternion.identity, transform);
-                // Debug.Log($"³ª¹« ¸ð¾ç : {treePrafeb}");
+                // Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : {treePrafeb}");
             }
             else
             {
@@ -42,7 +42,7 @@ public class TreeRandom : MonoBehaviour
 
     public void treeShpeRandom()
     {
-        // 3°³ÀÇ ³ª¹«¸¦ ·£´ýÀ¸·Î ³ª¿À°Ô ÇÏ±â
+        // 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½
         int treeShape = Random.Range(0, 3);
         switch (treeShape)
         {

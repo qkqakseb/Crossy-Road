@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class TrainRandom : MonoBehaviour
 {
-    public int trainCount;
-
     public GameObject trainPrafeb;
-    public GameObject instant;
+    private GameObject instant;
 
     public GameObject findStopObj;
 

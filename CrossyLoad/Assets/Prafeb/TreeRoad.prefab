@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3986017154327046992}
   - component: {fileID: 3986017154327046995}
+  - component: {fileID: 7109448711635000651}
   m_Layer: 0
   m_Name: TreeRoad
   m_TagString: Untagged
@@ -134,3 +135,17 @@ MonoBehaviour:
   twoTree: {fileID: 7198221609168205377, guid: a3068681bd0bfac4ea178a237c9a77f4, type: 3}
   threeTree: {fileID: 8368358146638783397, guid: dce4a4d4fae66d644b4ccf03640040aa, type: 3}
   instant: {fileID: 0}
+--- !u!114 &7109448711635000651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986017154327046999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74846dc9fbcb30541951ab4cbe76fea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCount: 3
+  coinPrafeb: {fileID: 7272588168531257679, guid: ff26f60fbf6a20d4d9aeab6ead748f35, type: 3}

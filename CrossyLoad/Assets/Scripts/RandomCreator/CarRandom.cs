@@ -30,11 +30,11 @@ public class CarRandom : MonoBehaviour
         posCk = directionNum;
         if (posCk == 1)
         {
-            posCk = 20;
+            posCk = 40;
         }
         else
         {
-            posCk = -20;
+            posCk = -40;
         }
 
         StartCoroutine(createCar());

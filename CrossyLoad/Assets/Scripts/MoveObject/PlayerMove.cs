@@ -6,10 +6,23 @@ public class PlayerMove : MonoBehaviour
 {
     public float playSpeed = default;
 
-    public GameObject playerMove;
+    public GameObject StartBt;
+    private GameObject playerMove;
     public bool isplayerMove = true;
+    public bool isStopMove = false; // 터치 전 동작 멈춤
 
-    public Rigidbody PlayerRigidbody;
+    // 코인 
+    public GameObject Coin;
+    public GameObject Score;
+    int scoreCount;
+
+    // 움직임 수
+    public GameObject MoveNumber;
+    int moveCount;
+
+
+    private Rigidbody PlayerRigidbody;
+
 
 
     // Start is called before the first frame update
@@ -21,7 +34,11 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        isStopMove = StartBt.GetComponent<StartButton>().isStopMove;
+        if (isStopMove == true)
+        {
+            Move();
+        }
     }
 
     // �÷��̾� ������
@@ -45,8 +62,14 @@ public class PlayerMove : MonoBehaviour
         // ���� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            // 플레이어가 1씩 이동할때
             PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z + 1);
             //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
+
+            // MoveNumber 가 1씩 증가
+            moveCount++;
+            MoveNumber.GetComponent<TextMesh>().text = moveCount.ToString();
+
             isplayerMove = true;
         }
         // �Ʒ��� ����Ű �Է�
@@ -61,8 +84,21 @@ public class PlayerMove : MonoBehaviour
             isplayerMove = false;
         }
 
-
-
-
     }
+
+    // 코인인지 확인
+    public void OnTriggerEnter(Collider other)
+    {
+        // tag가 coin이면 
+        if (other.gameObject.tag == "coin")
+        {
+            // 비활성화하기
+            other.gameObject.SetActive(false);
+            // Score가 1씩 증가
+            scoreCount++;
+            Score.GetComponent<TextMesh>().text = scoreCount.ToString();
+        }
+    }
+
+
 }
