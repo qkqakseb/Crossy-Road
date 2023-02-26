@@ -1219,6 +1219,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433695656}
   m_CullTransparentMesh: 1
+--- !u!1 &473474098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473474100}
+  - component: {fileID: 473474099}
+  m_Layer: 0
+  m_Name: DieGod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &473474099
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473474098}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 513315a5e49ed1a4eb1c2742a25322e2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.38, y: 5.7}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &473474100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473474098}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 12.51, z: 15.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &496075723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1352,7 +1436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1292813957}
   StartBt: {fileID: 1508108344}
+  DieGod: {fileID: 473474098}
   cameraSpeed: 50
+  godSpeed: 20
   isStopMove: 0
 --- !u!1001 &592528429
 PrefabInstance:
@@ -4686,12 +4772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85057481bdd3d334b9427633cb9cf0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarPrafeb: {fileID: 8654266968599903007, guid: 264ba9a75fdddd04ba610c8a7a97194d, type: 3}
-  LogPrafeb: {fileID: 0}
-  TrainPrafeb: {fileID: 0}
-  carCount: 10
-  logCount: 0
-  TrainCount: 0
 --- !u!4 &1569183690
 Transform:
   m_ObjectHideFlags: 0
@@ -7078,7 +7158,7 @@ GameObject:
   - component: {fileID: 2033580255}
   - component: {fileID: 2033580254}
   m_Layer: 5
-  m_Name: BestScore
+  m_Name: BestNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7780,6 +7860,10 @@ PrefabInstance:
       propertyPath: StartBt
       value: 
       objectReference: {fileID: 1508108344}
+    - target: {fileID: 3836897212678511018, guid: 1aa290dfa62e20540ab03f1dc2915e91, type: 3}
+      propertyPath: BestNumber
+      value: 
+      objectReference: {fileID: 2033580252}
     - target: {fileID: 3836897212678511018, guid: 1aa290dfa62e20540ab03f1dc2915e91, type: 3}
       propertyPath: MoveNumber
       value: 

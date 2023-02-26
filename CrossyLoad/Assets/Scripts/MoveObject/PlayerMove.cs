@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     private GameObject playerMove;
     public bool isplayerMove = true;
     public bool isStopMove = false; // 터치 전 동작 멈춤
+    // public bool isPlayer = default;
 
     // 코인 
     public GameObject Coin;
@@ -18,9 +19,13 @@ public class PlayerMove : MonoBehaviour
 
     // 움직임 수
     public GameObject MoveNumber;
+    public GameObject BestNumber;
+    private string bestNumber;
     int moveCount;
+    int bestCount;
 
 
+    public Vector3 startPos = default;
     private Rigidbody PlayerRigidbody;
 
 
@@ -29,6 +34,8 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         PlayerRigidbody = GetComponent<Rigidbody>();
+        startPos = transform.position;
+
     }
 
     // Update is called once per frame
@@ -38,6 +45,23 @@ public class PlayerMove : MonoBehaviour
         if (isStopMove == true)
         {
             Move();
+
+            // 움직일때 MoveNumber 증가
+            if (startPos.z + 1 <= transform.position.z)
+            {
+                // 초기화
+                startPos = transform.position;
+                // MoveNumber 가 1씩 증가
+                moveCount++;
+                MoveNumber.GetComponent<TextMesh>().text = moveCount.ToString();
+            }
+
+            // BestNumer 나타내기 (확인하기)
+            if (moveCount > bestCount)
+            {
+                BestNumber.GetComponent<TMPro.TMP_Text>().text = bestCount.ToString();
+                PlayerPrefs.SetInt(bestNumber, bestCount);
+            }
         }
     }
 
@@ -66,9 +90,10 @@ public class PlayerMove : MonoBehaviour
             PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z + 1);
             //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
 
-            // MoveNumber 가 1씩 증가
-            moveCount++;
-            MoveNumber.GetComponent<TextMesh>().text = moveCount.ToString();
+            // 
+
+
+
 
             isplayerMove = true;
         }
@@ -100,5 +125,14 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    // 플레이어 죽었을때
+    public void Die()
+    {
+        // 카메라가 멈추면
+        // 장애물에 닿으면(나무 제외)
+        //강물에 닿으면
+        //   통나무 위에서 강물에 파도에 닿으면
+
+    }
 
 }

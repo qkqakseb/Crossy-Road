@@ -7,13 +7,17 @@ public class MainCameraAT : MonoBehaviour
 {
     public GameObject Player; // ???? ??????? ???
     public GameObject StartBt;
+    public GameObject DieGod;
 
     public float cameraSpeed = default; // ???? ???
+    public float godSpeed = default;
+
 
     Vector3 playerPos;  // ??? ???
 
     private bool isplayerMove = default;  // ????????? ?????? ????
-    public bool isStopMove = false; // 터치 전 동작 멈춤 
+    public bool isStopMove = false; // ??? ?? ???? ???? 
+    public bool isDieGod = default;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +47,21 @@ public class MainCameraAT : MonoBehaviour
                 // ???? ????? z?????? +5 ??? ????? ???
                 if (playerPos.z + 5 <= transform.position.z)
                 {
-                    //Debug.Log($"???? z??? : {transform.position.z} / ??????? z??? : {playerPos.z}");
+                    if (!isDieGod)
+                    {
+                        isDieGod = true;
+                        DieGod.transform.position = new Vector3(transform.position.x, 12f, Player.transform.position.z + 10);
+                        // 하데스가 나타나고
+                        DieGod.SetActive(true);
+
+                        StartCoroutine(playerDely());
+
+                    }
+                    // 날아간다
+                    Vector3 dieGod = new Vector3(0f, 0f, -(Time.deltaTime * godSpeed));
+                    DieGod.transform.position += dieGod;
+
+
                 }
                 else
                 {
@@ -53,11 +71,20 @@ public class MainCameraAT : MonoBehaviour
                     transform.position += carmeraPos;
                     // ???????? ?????? ???????????? ?????? ???? ?????????
                     transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
+
+
                 }
 
             }
 
         }
+    }
+
+    IEnumerator playerDely()
+    {
+        yield return new WaitForSeconds(0.6f);
+        // 플레이어 비활성
+        Player.SetActive(false);
     }
 
 
