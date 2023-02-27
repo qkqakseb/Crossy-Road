@@ -197,11 +197,11 @@ v1.1.3
 
 - 
 
-
+v1.1.4
 issue: 
 
 1. 다른 캐릭터가 죽고 restart 버튼을 누를때 MainScene으로 돌아가게 하는데 지정된 캐릭터로 바뀐다. 
-   => ???
+   => PlayerPrefs 쓴다???
 
 2. 플레이어가 죽고도 움직인다.
     => 플레이어를 비활성 시킨다??
@@ -209,17 +209,18 @@ issue:
 3. 플레이어가 빠르게 z축으로 움직이면 강에 빠져도 죽지 않고 그냥 지나친다.
    => 플레이어의 스피드를 줄인다???
 
-4. 플레이어가 나무와 충돌을 하지않아 통과한다.
-  = > ???
-
-5. 시작 후 플레이어가 -z축으로 뒤로 가면 StartBaseRoad을 지나 떨어진다.
+4. 시작 후 플레이어가 -z축으로 뒤로 가면 StartBaseRoad을 지나 떨어진다.
   => 일정 -z축으로 가면 죽게 한다???
 
 
 
 problem solving :
 
+1. PopupWindow Scriptdml SelectCharacter()(캐릭터를 고르는)함수에 PlayerPrefs.SetString("Player", SelectName);을 써서 저장 시키고, 
+Start() 함수에서 SelectCharacter(PlayerPrefs.GetString("Player")); 불러온다.
 2. 죽은 오브젝트가 뜨는 곳에서 플레이어를 비활성화 시켜 해결
+3. 플레이어의 y축 위치를 1.5f로 줄여서 해결
+4. MainCameraAT Script에 있는 playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);를 계속 초기화 시키 위해  isplayerMove위로 올려서 해결
 
 
 

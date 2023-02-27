@@ -40,11 +40,11 @@ public class MainCameraAT : MonoBehaviour
 
         if (isStopMove == true)
         {
+            playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
             isplayerMove = Player.GetComponent<PlayerMove>().isplayerMove;
             if (isplayerMove)
             {
                 // ???? ??????????? z?? -10 ??????? ???? ???? ???.(Inspetor???? ??????)
-                playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
                 // ?????? ???????? ??????? ??? ???(Lerp)
                 transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * cameraSpeed * 10);

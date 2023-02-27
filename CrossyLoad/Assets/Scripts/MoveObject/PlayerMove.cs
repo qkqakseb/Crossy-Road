@@ -85,7 +85,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             // 1ĭ�� ���� �ϱ� 
-            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 2, transform.position.z);
+            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1.5f, transform.position.z);
             //Vector3 targetPos = new Vector3(transform.position.x - 1, 2, transform.position.z);
             //StartCoroutine(MoveToPos(targetPos));
             //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
@@ -94,7 +94,7 @@ public class PlayerMove : MonoBehaviour
         // �������� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 2, transform.position.z);
+            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1.5f, transform.position.z);
             //Vector3 targetPos = new Vector3(transform.position.x + 1, 2, transform.position.z);
             //StartCoroutine(MoveToPos(targetPos));
             //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             // 플레이어가 1씩 이동할때
-            PlayerRigidbody.position = new Vector3(transform.position.x, 2, transform.position.z + 1);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z + 1);
             //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z + 1);
             //StartCoroutine(MoveToPos(targetPos));
 
@@ -114,7 +114,7 @@ public class PlayerMove : MonoBehaviour
         // �Ʒ��� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x, 2, transform.position.z - 1);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z - 1);
             //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z - 1);
             //StartCoroutine(MoveToPos(targetPos));
 
@@ -202,10 +202,6 @@ public class PlayerMove : MonoBehaviour
             gameObject.SetActive(false);
 
             IsDie = true;
-        }
-        if (other.gameObject.tag == "tree")
-        {
-
         }
     }
 

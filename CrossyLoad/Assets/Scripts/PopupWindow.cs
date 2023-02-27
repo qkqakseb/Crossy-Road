@@ -54,7 +54,7 @@ public class PopupWindow : MonoBehaviour
     void Start()
     {
         nextmainScene();
-        //BestTxt
+        SelectCharacter(PlayerPrefs.GetString("Player"));
     }
 
     // Update is called once per frame
@@ -128,6 +128,7 @@ public class PopupWindow : MonoBehaviour
 
     public void SelectCharacter(string SelectName)
     {
+        PlayerPrefs.SetString("Player", SelectName);
         switch (SelectName)
         {
             case "ReaperUi":
@@ -237,8 +238,8 @@ public class PopupWindow : MonoBehaviour
         Player.transform.position = new Vector3(0f, 1f, 0f);
         Player.SetActive(true);
         Carmara.transform.position = new Vector3(0f, 0f, 0f);
-        // 다가오는 카메라 멈추게 하기
-        //Carmara.GetComponent<MainCameraAT>().isStopMove = false;
+
+        // PlayerPrefs.Get;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 }
