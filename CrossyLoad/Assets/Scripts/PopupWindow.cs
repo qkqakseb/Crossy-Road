@@ -41,11 +41,20 @@ public class PopupWindow : MonoBehaviour
     public GameObject GirlGhost;
     public GameObject Skeleton;
 
+    [Space(5)]
+    [Header("Restart")]
+    public GameObject DBackground;
+    public GameObject DGod;
+    public GameObject DText;
+    public GameObject RestartButton;
+    public GameObject Player;
+    public GameObject Carmara;
+
     // Start is called before the first frame update
     void Start()
     {
         nextmainScene();
-
+        //BestTxt
     }
 
     // Update is called once per frame
@@ -208,4 +217,29 @@ public class PopupWindow : MonoBehaviour
         BestTxt.SetActive(true);
     }
 
+    public void Restart()
+    {
+        // Restart 비활성화
+        DBackground.SetActive(false);
+        DGod.SetActive(false);
+        DText.SetActive(false);
+        RestartButton.SetActive(false);
+
+        // StartObj 활성화
+        Logo.SetActive(true);
+        ExitButton.SetActive(true);
+        CharacterButton.SetActive(true);
+        ScoreCoin.SetActive(true);
+        MoveNumber.SetActive(true);
+        BestTxt.SetActive(true);
+
+        // 처음 위치로 간다.(카메라, 캐릭터 위치)
+        Player.transform.position = new Vector3(0f, 1f, 0f);
+        Player.SetActive(true);
+        Carmara.transform.position = new Vector3(0f, 0f, 0f);
+        // 다가오는 카메라 멈추게 하기
+        //Carmara.GetComponent<MainCameraAT>().isStopMove = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+    }
 }
+

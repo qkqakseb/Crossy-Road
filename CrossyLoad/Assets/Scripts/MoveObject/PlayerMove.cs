@@ -7,10 +7,13 @@ public class PlayerMove : MonoBehaviour
     public float playSpeed = default;
 
     public GameObject StartBt;
-    private GameObject playerMove;
+    // private GameObject playerMove;
+    public GameObject carmera;
+
     public bool isplayerMove = true;
     public bool isStopMove = false; // 터치 전 동작 멈춤
-    // public bool isPlayer = default;
+    public bool IsDie = false;
+
 
     // 코인 
     public GameObject Coin;
@@ -24,6 +27,13 @@ public class PlayerMove : MonoBehaviour
     int moveCount;
     int bestCount;
 
+    // Restart Ui
+    public GameObject DBackground;
+    public GameObject DGod;
+    public GameObject DText;
+    public GameObject RestartButton;
+
+
 
     public Vector3 startPos = default;
     private Rigidbody PlayerRigidbody;
@@ -35,7 +45,8 @@ public class PlayerMove : MonoBehaviour
     {
         PlayerRigidbody = GetComponent<Rigidbody>();
         startPos = transform.position;
-
+        BestNumber.GetComponent<TMPro.TMP_Text>().text = PlayerPrefs.GetInt("bestNumber").ToString();
+        bestCount = PlayerPrefs.GetInt("bestNumber");
     }
 
     // Update is called once per frame
@@ -59,8 +70,10 @@ public class PlayerMove : MonoBehaviour
             // BestNumer 나타내기 (확인하기)
             if (moveCount > bestCount)
             {
+                bestCount = moveCount;
                 BestNumber.GetComponent<TMPro.TMP_Text>().text = bestCount.ToString();
-                PlayerPrefs.SetInt(bestNumber, bestCount);
+                PlayerPrefs.SetInt("bestNumber", bestCount);
+
             }
         }
     }
@@ -72,14 +85,18 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             // 1ĭ�� ���� �ϱ� 
-            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1, transform.position.z);
+            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 2, transform.position.z);
+            //Vector3 targetPos = new Vector3(transform.position.x - 1, 2, transform.position.z);
+            //StartCoroutine(MoveToPos(targetPos));
             //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
             isplayerMove = true;
         }
         // �������� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1, transform.position.z);
+            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 2, transform.position.z);
+            //Vector3 targetPos = new Vector3(transform.position.x + 1, 2, transform.position.z);
+            //StartCoroutine(MoveToPos(targetPos));
             //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
             isplayerMove = true;
         }
@@ -87,22 +104,22 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             // 플레이어가 1씩 이동할때
-            PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z + 1);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 2, transform.position.z + 1);
+            //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z + 1);
+            //StartCoroutine(MoveToPos(targetPos));
+
             //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
-
-            // 
-
-
-
-
             isplayerMove = true;
         }
         // �Ʒ��� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x, 1, transform.position.z - 1);
+            PlayerRigidbody.position = new Vector3(transform.position.x, 2, transform.position.z - 1);
+            //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z - 1);
+            //StartCoroutine(MoveToPos(targetPos));
+
             //PlayerRigidbody.AddForce(0f, 1f, -playSpeed);
-            isplayerMove = true;
+            //isplayerMove = true;
         }
         else
         {
@@ -111,9 +128,24 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    // 코인인지 확인
+    IEnumerator MoveToPos(Vector3 pos)
+    {
+        bool IsMoveComplete = false;
+        while (!IsMoveComplete)
+        {
+            //transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
+            PlayerRigidbody.position = Vector3.Lerp(transform.position, pos, playSpeed * Time.deltaTime);
+            if (PlayerRigidbody.position == pos)
+            {
+                IsMoveComplete = true;
+            }
+            yield return null;
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
+        // 코인인지 확인
         // tag가 coin이면 
         if (other.gameObject.tag == "coin")
         {
@@ -123,16 +155,61 @@ public class PlayerMove : MonoBehaviour
             scoreCount++;
             Score.GetComponent<TextMesh>().text = scoreCount.ToString();
         }
+
+
+        // 플레이어 죽었을때
+        // 장애물에 닿았을때(나무 제외)
+        if (other.gameObject.tag == "car")
+        {
+
+            // Restart 활성화
+            DBackground.SetActive(true);
+            DGod.SetActive(true);
+            DText.SetActive(true);
+            RestartButton.SetActive(true);
+            gameObject.SetActive(false);
+            IsDie = true;
+        }
+        if (other.gameObject.tag == "train")
+        {
+            // Restart 활성화
+            DBackground.SetActive(true);
+            DGod.SetActive(true);
+            DText.SetActive(true);
+            RestartButton.SetActive(true);
+            gameObject.SetActive(false);
+
+            IsDie = true;
+        }
+        if (other.gameObject.tag == "river")
+        {
+            // Restart 활성화
+            DBackground.SetActive(true);
+            DGod.SetActive(true);
+            DText.SetActive(true);
+            RestartButton.SetActive(true);
+            gameObject.SetActive(false);
+
+            IsDie = true;
+        }
+        if (other.gameObject.tag == "riverWave")
+        {
+            // Restart 활성화
+            DBackground.SetActive(true);
+            DGod.SetActive(true);
+            DText.SetActive(true);
+            RestartButton.SetActive(true);
+            gameObject.SetActive(false);
+
+            IsDie = true;
+        }
+        if (other.gameObject.tag == "tree")
+        {
+
+        }
     }
 
-    // 플레이어 죽었을때
-    public void Die()
-    {
-        // 카메라가 멈추면
-        // 장애물에 닿으면(나무 제외)
-        //강물에 닿으면
-        //   통나무 위에서 강물에 파도에 닿으면
 
-    }
+
 
 }

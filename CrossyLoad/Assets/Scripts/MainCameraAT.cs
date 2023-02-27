@@ -9,30 +9,37 @@ public class MainCameraAT : MonoBehaviour
     public GameObject StartBt;
     public GameObject DieGod;
 
+    // Restart Ui
+    public GameObject DBackground;
+    public GameObject DGod;
+    public GameObject DText;
+    public GameObject RestartButton;
+
     public float cameraSpeed = default; // ???? ???
     public float godSpeed = default;
 
 
-    Vector3 playerPos;  // ??? ???
+    public Vector3 playerPos;  // ??? ???
+    public Vector3 carmeraPos;
 
     private bool isplayerMove = default;  // ????????? ?????? ????
     public bool isStopMove = false; // ??? ?? ???? ???? 
+
+
     public bool isDieGod = default;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
         isStopMove = StartBt.GetComponent<StartButton>().isStopMove;
+
         if (isStopMove == true)
         {
-
-
             isplayerMove = Player.GetComponent<PlayerMove>().isplayerMove;
             if (isplayerMove)
             {
@@ -51,28 +58,26 @@ public class MainCameraAT : MonoBehaviour
                     {
                         isDieGod = true;
                         DieGod.transform.position = new Vector3(transform.position.x, 12f, Player.transform.position.z + 10);
-                        // ÇÏµ¥½º°¡ ³ªÅ¸³ª°í
+                        // ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½
                         DieGod.SetActive(true);
 
                         StartCoroutine(playerDely());
 
                     }
-                    // ³¯¾Æ°£´Ù
+                    // ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½
                     Vector3 dieGod = new Vector3(0f, 0f, -(Time.deltaTime * godSpeed));
                     DieGod.transform.position += dieGod;
-
-
                 }
                 else
                 {
-
-                    // ???? ??? z?????? ???????
-                    Vector3 carmeraPos = new Vector3(playerPos.x, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
-                    transform.position += carmeraPos;
-                    // ???????? ?????? ???????????? ?????? ???? ?????????
-                    transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
-
-
+                    if (!Player.GetComponent<PlayerMove>().IsDie)
+                    {
+                        // ???? ??? z?????? ???????
+                        Vector3 carmeraPos = new Vector3(playerPos.x, 0f, Time.deltaTime * (cameraSpeed * 0.02f));
+                        transform.position += carmeraPos;
+                        // ???????? ?????? ???????????? ?????? ???? ?????????
+                        transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z);
+                    }
                 }
 
             }
@@ -83,8 +88,16 @@ public class MainCameraAT : MonoBehaviour
     IEnumerator playerDely()
     {
         yield return new WaitForSeconds(0.6f);
-        // ÇÃ·¹ÀÌ¾î ºñÈ°¼º
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½È°ï¿½ï¿½
         Player.SetActive(false);
+
+        yield return new WaitForSeconds(0.6f);
+        // Restart í™œì„±í™”
+        DBackground.SetActive(true);
+        DGod.SetActive(true);
+        DText.SetActive(true);
+        RestartButton.SetActive(true);
+
     }
 
 

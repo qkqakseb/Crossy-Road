@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2820960577831987251}
   - component: {fileID: 2808742516990932310}
+  - component: {fileID: 2071574436818209743}
   m_Layer: 0
   m_Name: TrainRoad
   m_TagString: Untagged
@@ -51,10 +52,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526018bdf46395840b8c9603453c3c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainCount: 1
   trainPrafeb: {fileID: 1249186671461131643, guid: 422e1641cb22ad744aa48f702838ad65, type: 3}
-  instant: {fileID: 0}
   findStopObj: {fileID: 1764762872392129213}
+--- !u!65 &2071574436818209743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820960577831987248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 0.4, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8316116619320309994
 GameObject:
   m_ObjectHideFlags: 0

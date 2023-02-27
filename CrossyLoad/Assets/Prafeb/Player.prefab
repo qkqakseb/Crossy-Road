@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3836897212678511021}
   m_Layer: 5
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,9 +64,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playSpeed: 150
-  playerMove: {fileID: 0}
+  StartBt: {fileID: 0}
+  carmera: {fileID: 0}
   isplayerMove: 1
-  PlayerRigidbody: {fileID: 0}
+  isStopMove: 0
+  IsDie: 0
+  Coin: {fileID: 0}
+  Score: {fileID: 0}
+  MoveNumber: {fileID: 0}
+  BestNumber: {fileID: 0}
+  DBackground: {fileID: 0}
+  DGod: {fileID: 0}
+  DText: {fileID: 0}
+  RestartButton: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!65 &3836897212678511021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78,7 +89,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 2, y: 3, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5083374230626752369
 GameObject:
@@ -93,7 +104,7 @@ GameObject:
   - component: {fileID: 7641455049180374387}
   m_Layer: 5
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

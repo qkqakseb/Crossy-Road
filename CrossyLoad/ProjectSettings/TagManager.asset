@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - coin
+  - car
+  - train
+  - river
+  - riverWave
+  - tree
   layers:
   - Default
   - TransparentFX
