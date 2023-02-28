@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+// using System.Numerics;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -78,48 +81,63 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    // �÷��̾� ������
+
+
+    // 플레이어 움직임
+    public void moveLeft()
+    {
+        PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1.5f, transform.position.z);
+        isplayerMove = true;
+        //Vector3 targetPos = new Vector3(transform.position.x - 1, 2, transform.position.z);
+        //StartCoroutine(MoveToPos(targetPos));
+        //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
+    }
+    public void moveRight()
+    {
+        PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1.5f, transform.position.z);
+        isplayerMove = true;
+        //Vector3 targetPos = new Vector3(transform.position.x + 1, 2, transform.position.z);
+        //StartCoroutine(MoveToPos(targetPos));
+        //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
+    }
+    public void moveUp()
+    {
+        PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z + 1);
+        isplayerMove = true;
+        //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z + 1);
+        //StartCoroutine(MoveToPos(targetPos));
+        //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
+    }
+    public void moveDown()
+    {
+        PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z - 1);
+        //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z - 1);
+        //StartCoroutine(MoveToPos(targetPos));
+        //PlayerRigidbody.AddForce(0f, 1f, -playSpeed);
+    }
+
+
+
+    // 모바일
+    // 플레이어 움직임
     public void Move()
     {
-        // ������ ����Ű �Է�
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            // 1ĭ�� ���� �ϱ� 
-            PlayerRigidbody.position = new Vector3(transform.position.x - 1, 1.5f, transform.position.z);
-            //Vector3 targetPos = new Vector3(transform.position.x - 1, 2, transform.position.z);
-            //StartCoroutine(MoveToPos(targetPos));
-            //PlayerRigidbody.AddForce(-playSpeed, 1f, 0f);
-            isplayerMove = true;
+
+            moveLeft();
         }
-        // �������� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x + 1, 1.5f, transform.position.z);
-            //Vector3 targetPos = new Vector3(transform.position.x + 1, 2, transform.position.z);
-            //StartCoroutine(MoveToPos(targetPos));
-            //PlayerRigidbody.AddForce(playSpeed, 1f, 0f);
-            isplayerMove = true;
+            moveRight();
         }
-        // ���� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            // 플레이어가 1씩 이동할때
-            PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z + 1);
-            //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z + 1);
-            //StartCoroutine(MoveToPos(targetPos));
-
-            //PlayerRigidbody.AddForce(0f, 1f, playSpeed);
-            isplayerMove = true;
+            moveUp();
         }
-        // �Ʒ��� ����Ű �Է�
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            PlayerRigidbody.position = new Vector3(transform.position.x, 1.5f, transform.position.z - 1);
-            //Vector3 targetPos = new Vector3(transform.position.x, 2, transform.position.z - 1);
-            //StartCoroutine(MoveToPos(targetPos));
-
-            //PlayerRigidbody.AddForce(0f, 1f, -playSpeed);
-            //isplayerMove = true;
+            moveDown();
         }
         else
         {
@@ -127,6 +145,14 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
+
+
+
+
+
+
+
+
 
     IEnumerator MoveToPos(Vector3 pos)
     {
@@ -204,6 +230,7 @@ public class PlayerMove : MonoBehaviour
             IsDie = true;
         }
     }
+
 
 
 
