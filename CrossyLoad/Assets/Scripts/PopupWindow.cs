@@ -53,6 +53,7 @@ public class PopupWindow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(720, 1280, true);
         nextmainScene();
         SelectCharacter(PlayerPrefs.GetString("Player"));
         Score.GetComponent<TextMesh>().text = PlayerPrefs.GetInt("coin").ToString();

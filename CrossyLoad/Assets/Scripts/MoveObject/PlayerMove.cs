@@ -50,6 +50,8 @@ public class PlayerMove : MonoBehaviour
         startPos = transform.position;
         BestNumber.GetComponent<TMPro.TMP_Text>().text = PlayerPrefs.GetInt("bestNumber").ToString();
         bestCount = PlayerPrefs.GetInt("bestNumber");
+
+        scoreCount = PlayerPrefs.GetInt("coin");
     }
 
     // Update is called once per frame
