@@ -180,6 +180,7 @@ public class PlayerMove : MonoBehaviour
             // Score가 1씩 증가
             scoreCount++;
             Score.GetComponent<TextMesh>().text = scoreCount.ToString();
+            PlayerPrefs.SetInt("coin", scoreCount);
         }
 
 

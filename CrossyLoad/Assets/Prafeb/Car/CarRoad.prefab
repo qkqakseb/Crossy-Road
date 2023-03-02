@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (3)
@@ -229,6 +233,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (6)
@@ -311,6 +319,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (1)
@@ -393,6 +405,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (10)
@@ -475,6 +491,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway
@@ -557,6 +577,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (7)
@@ -639,6 +663,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (11)
@@ -721,6 +749,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (9)
@@ -803,6 +835,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (5)
@@ -885,6 +921,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (10)
@@ -967,6 +1007,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (8)
@@ -1049,6 +1093,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (7)
@@ -1131,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (14)
@@ -1213,6 +1265,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (9)
@@ -1295,6 +1351,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway (2)
@@ -1377,6 +1437,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 6a7cf114e2de5b74498ef5a59c6e9d35, type: 3}
     - target: {fileID: 919132149155446097, guid: 5970f8e518a17c345bae3dbb669d7522, type: 3}
       propertyPath: m_Name
       value: roadway_left (4)

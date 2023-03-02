@@ -55,6 +55,7 @@ public class PopupWindow : MonoBehaviour
     {
         nextmainScene();
         SelectCharacter(PlayerPrefs.GetString("Player"));
+        Score.GetComponent<TextMesh>().text = PlayerPrefs.GetInt("coin").ToString();
     }
 
     // Update is called once per frame
@@ -197,7 +198,7 @@ public class PopupWindow : MonoBehaviour
                 break;
         }
 
-        Debug.Log($"{SelectName}");
+        // Debug.Log($"{SelectName}");
 
         // characterObj 비활성
         Background.SetActive(false);
